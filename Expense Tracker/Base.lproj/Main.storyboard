@@ -78,10 +78,10 @@
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="93.75"/>
         </scene>
-        <!--View Controller-->
+        <!--Login-->
         <scene sceneID="A78-dE-IRd">
             <objects>
-                <viewController id="1bW-wO-hbU" sceneMemberID="viewController">
+                <viewController title="Login" id="1bW-wO-hbU" customClass="LoginViewController" customModule="Expense_Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XTv-Mo-r4l">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -93,10 +93,10 @@
             </objects>
             <point key="canvasLocation" x="1684.057971014493" y="99.776785714285708"/>
         </scene>
-        <!--View Controller-->
+        <!--Signup-->
         <scene sceneID="kKT-xz-z3y">
             <objects>
-                <viewController id="NPW-Qv-vJg" sceneMemberID="viewController">
+                <viewController title="Signup" id="NPW-Qv-vJg" customClass="SignupViewController" customModule="Expense_Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bUo-83-E93">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -108,10 +108,10 @@
             </objects>
             <point key="canvasLocation" x="2334.7826086956525" y="99.776785714285708"/>
         </scene>
-        <!--View Controller-->
+        <!--Profile-->
         <scene sceneID="XYH-IE-gy9">
             <objects>
-                <viewController id="xMc-Ig-7kR" sceneMemberID="viewController">
+                <viewController title="Profile" id="xMc-Ig-7kR" customClass="ProfileViewController" customModule="Expense_Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zQw-L9-NpH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -140,6 +140,51 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vDY-v3-7ai" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="93.75"/>
+        </scene>
+        <!--Expense-->
+        <scene sceneID="Cyf-dx-TWA">
+            <objects>
+                <viewController title="Expense" id="erL-yY-8el" customClass="ExpenseViewController" customModule="Expense_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RHR-7b-nW8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="xdz-Hd-oK2"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="afI-yk-wjD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2712" y="100"/>
+        </scene>
+        <!--Graph-->
+        <scene sceneID="yZG-tO-PmC">
+            <objects>
+                <viewController title="Graph" id="Mpc-UF-sH6" customClass="GraphViewController" customModule="Expense_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UiN-bO-1bb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Mbb-Z1-6Po"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M7D-Qv-6c5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3368" y="100"/>
+        </scene>
+        <!--Income-->
+        <scene sceneID="7hf-4S-1k0">
+            <objects>
+                <viewController title="Income" id="44Y-Cf-t4y" customClass="IncomeViewController" customModule="Expense_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DDF-TH-nmI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="BLk-fq-Uch"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="paV-R3-6gn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4017" y="100"/>
         </scene>
     </scenes>
     <resources>
