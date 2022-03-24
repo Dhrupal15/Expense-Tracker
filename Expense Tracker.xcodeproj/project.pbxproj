@@ -15,6 +15,11 @@
 		CC89FD9227E386EC00E8D33C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC89FD9027E386EC00E8D33C /* LaunchScreen.storyboard */; };
 		CC89FD9D27E386EC00E8D33C /* Expense_TrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC89FD9C27E386EC00E8D33C /* Expense_TrackerTests.swift */; };
 		CC89FDA827E386EC00E8D33C /* Expense_TrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC89FDA727E386EC00E8D33C /* Expense_TrackerUITests.swift */; };
+		CC8D2C8427ECC417001D4944 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8D2C8327ECC417001D4944 /* LoginViewController.swift */; };
+		CC8D2C8927ECC512001D4944 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8D2C8827ECC512001D4944 /* SignupViewController.swift */; };
+		CC8D2C8E27ECC542001D4944 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8D2C8D27ECC542001D4944 /* ProfileViewController.swift */; };
+		CC8D2C9327ECC567001D4944 /* ExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8D2C9227ECC567001D4944 /* ExpenseViewController.swift */; };
+		CC8D2C9827ECC59A001D4944 /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8D2C9727ECC59A001D4944 /* GraphViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +54,11 @@
 		CC89FDA327E386EC00E8D33C /* Expense TrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Expense TrackerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC89FDA727E386EC00E8D33C /* Expense_TrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense_TrackerUITests.swift; sourceTree = "<group>"; };
 		CC89FDA927E386EC00E8D33C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CC8D2C8327ECC417001D4944 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		CC8D2C8827ECC512001D4944 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		CC8D2C8D27ECC542001D4944 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		CC8D2C9227ECC567001D4944 /* ExpenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseViewController.swift; sourceTree = "<group>"; };
+		CC8D2C9727ECC59A001D4944 /* GraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +116,11 @@
 				CC89FD8E27E386EC00E8D33C /* Assets.xcassets */,
 				CC89FD9027E386EC00E8D33C /* LaunchScreen.storyboard */,
 				CC89FD9327E386EC00E8D33C /* Info.plist */,
+				CC8D2C8327ECC417001D4944 /* LoginViewController.swift */,
+				CC8D2C8827ECC512001D4944 /* SignupViewController.swift */,
+				CC8D2C8D27ECC542001D4944 /* ProfileViewController.swift */,
+				CC8D2C9227ECC567001D4944 /* ExpenseViewController.swift */,
+				CC8D2C9727ECC59A001D4944 /* GraphViewController.swift */,
 			);
 			path = "Expense Tracker";
 			sourceTree = "<group>";
@@ -258,7 +273,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC8D2C9327ECC567001D4944 /* ExpenseViewController.swift in Sources */,
+				CC8D2C8E27ECC542001D4944 /* ProfileViewController.swift in Sources */,
+				CC8D2C8427ECC417001D4944 /* LoginViewController.swift in Sources */,
 				CC89FD8A27E386DE00E8D33C /* ViewController.swift in Sources */,
+				CC8D2C8927ECC512001D4944 /* SignupViewController.swift in Sources */,
+				CC8D2C9827ECC59A001D4944 /* GraphViewController.swift in Sources */,
 				CC89FD8627E386DE00E8D33C /* AppDelegate.swift in Sources */,
 				CC89FD8827E386DE00E8D33C /* SceneDelegate.swift in Sources */,
 			);
