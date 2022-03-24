@@ -20,6 +20,7 @@
 		CC8D2C8E27ECC542001D4944 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8D2C8D27ECC542001D4944 /* ProfileViewController.swift */; };
 		CC8D2C9327ECC567001D4944 /* ExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8D2C9227ECC567001D4944 /* ExpenseViewController.swift */; };
 		CC8D2C9827ECC59A001D4944 /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8D2C9727ECC59A001D4944 /* GraphViewController.swift */; };
+		CC8D2C9D27ECC745001D4944 /* IncomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8D2C9C27ECC745001D4944 /* IncomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		CC8D2C8D27ECC542001D4944 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		CC8D2C9227ECC567001D4944 /* ExpenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseViewController.swift; sourceTree = "<group>"; };
 		CC8D2C9727ECC59A001D4944 /* GraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
+		CC8D2C9C27ECC745001D4944 /* IncomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 				CC8D2C8D27ECC542001D4944 /* ProfileViewController.swift */,
 				CC8D2C9227ECC567001D4944 /* ExpenseViewController.swift */,
 				CC8D2C9727ECC59A001D4944 /* GraphViewController.swift */,
+				CC8D2C9C27ECC745001D4944 /* IncomeViewController.swift */,
 			);
 			path = "Expense Tracker";
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 				CC8D2C9327ECC567001D4944 /* ExpenseViewController.swift in Sources */,
 				CC8D2C8E27ECC542001D4944 /* ProfileViewController.swift in Sources */,
 				CC8D2C8427ECC417001D4944 /* LoginViewController.swift in Sources */,
+				CC8D2C9D27ECC745001D4944 /* IncomeViewController.swift in Sources */,
 				CC89FD8A27E386DE00E8D33C /* ViewController.swift in Sources */,
 				CC8D2C8927ECC512001D4944 /* SignupViewController.swift in Sources */,
 				CC8D2C9827ECC59A001D4944 /* GraphViewController.swift in Sources */,
