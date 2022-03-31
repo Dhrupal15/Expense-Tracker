@@ -14,6 +14,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        UITabBar.appearance().tintColor = UIColor.white
+        UITabBar.appearance().isTranslucent = false
         return true
     }
 
@@ -32,5 +34,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
+    static func OpenAlert(with title:String , message:String , VC:UIViewController){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let cancelAction = UIAlertAction.init(title: "Ok", style: .cancel, handler: nil)
+        alert.addAction(cancelAction)
+        VC.present(alert, animated: true, completion: nil)
+    }
 }
 
+extension String {
+    func trim() -> String {
+        return self.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+    }
+}
