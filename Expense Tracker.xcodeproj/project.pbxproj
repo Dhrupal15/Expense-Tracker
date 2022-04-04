@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B27813827FAB4FF00E6C5F8 /* MDRotatingPieChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B27813727FAB4FF00E6C5F8 /* MDRotatingPieChart.swift */; };
 		CC89FD8627E386DE00E8D33C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC89FD8527E386DE00E8D33C /* AppDelegate.swift */; };
 		CC89FD8827E386DE00E8D33C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC89FD8727E386DE00E8D33C /* SceneDelegate.swift */; };
 		CC89FD8A27E386DE00E8D33C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC89FD8927E386DE00E8D33C /* ViewController.swift */; };
@@ -44,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3B27813727FAB4FF00E6C5F8 /* MDRotatingPieChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDRotatingPieChart.swift; sourceTree = "<group>"; };
 		CC89FD8227E386DE00E8D33C /* Expense Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Expense Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC89FD8527E386DE00E8D33C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CC89FD8727E386DE00E8D33C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				CC8D2C9227ECC567001D4944 /* ExpenseViewController.swift */,
 				CC8D2C9727ECC59A001D4944 /* GraphViewController.swift */,
 				CC8D2C9C27ECC745001D4944 /* IncomeViewController.swift */,
+				3B27813727FAB4FF00E6C5F8 /* MDRotatingPieChart.swift */,
 			);
 			path = "Expense Tracker";
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 				CC8D2C8E27ECC542001D4944 /* ProfileViewController.swift in Sources */,
 				CC8D2C8427ECC417001D4944 /* LoginViewController.swift in Sources */,
 				CC8D2C9D27ECC745001D4944 /* IncomeViewController.swift in Sources */,
+				3B27813827FAB4FF00E6C5F8 /* MDRotatingPieChart.swift in Sources */,
 				CC89FD8A27E386DE00E8D33C /* ViewController.swift in Sources */,
 				CC8D2C8927ECC512001D4944 /* SignupViewController.swift in Sources */,
 				CC8D2C9827ECC59A001D4944 /* GraphViewController.swift in Sources */,

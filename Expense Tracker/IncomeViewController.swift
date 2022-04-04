@@ -68,13 +68,14 @@ class IncomeViewController: UIViewController {
         self.txt_Title.inputAccessoryView = numberToolbar
         self.txt_Income.inputAccessoryView = numberToolbar
         self.txt_SelectDate.inputAccessoryView = numberToolbar
+        self.SetDate()
     }
     @objc func cancelNumberPad() {
         self.view.endEditing(true)
     }
     @objc func doneWithNumberPad() {
         self.view.endEditing(true)
-        self.SetDate()
+        
     }
     func SetData(){
         if let arrincomeDic = UserDefaults.standard.value(forKey: "arrIncomeDic") as? [[String:Any]] {
@@ -140,7 +141,7 @@ extension IncomeViewController : UITableViewDelegate , UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: IncomeTableViewCell.IncomeTableViewCellId, for: indexPath) as! IncomeTableViewCell
         let incomDic = self.arrIncomeDic[indexPath.row]
         cell.lbl_Title.text = incomDic["title"] as? String ?? ""
-        cell.lbl_Income.text = "$ " + (incomDic["income"] as? String ?? "0")
+        cell.lbl_Detail.text = "$ " + (incomDic["income"] as? String ?? "0")
         cell.lbl_Date.text = (incomDic["date"] as? String ?? "")
         return cell
     }
@@ -163,7 +164,8 @@ class IncomeTableViewCell:UITableViewCell {
     static let IncomeTableViewCellId = "IncomeTableViewCell"
     
     @IBOutlet weak var lbl_Title: UILabel!
-    @IBOutlet weak var lbl_Income: UILabel!
+    @IBOutlet weak var lbl_Detail: UILabel!
+    @IBOutlet weak var lbl_Category: UILabel!
     @IBOutlet weak var lbl_Date: UILabel!
 }
 
