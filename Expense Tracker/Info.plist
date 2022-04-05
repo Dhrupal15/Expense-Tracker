@@ -60,5 +60,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Allow Access to change profile picture</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Allow Access to change profile picture</string>
 </dict>
 </plist>
