@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1bW-wO-hbU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="imm-HS-TqT">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -91,7 +91,7 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="qcb-4z-J2s" kind="presentation" modalPresentationStyle="fullScreen" id="9XL-dO-kOg"/>
+                                                    <action selector="ActionLOginBtn:" destination="1bW-wO-hbU" eventType="touchUpInside" id="tua-oR-lXw"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="koX-1C-XXC">
@@ -121,16 +121,18 @@
                             <constraint firstItem="kq3-r9-V7O" firstAttribute="centerY" secondItem="XTv-Mo-r4l" secondAttribute="centerY" id="qbs-qV-qCU"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="bD5-4A-bMn"/>
                     <connections>
                         <outlet property="loginButton" destination="3GR-uV-5qa" id="K80-Vv-DSL"/>
                         <outlet property="passwordTextField" destination="cDY-Oc-6JK" id="3pf-jk-PlM"/>
                         <outlet property="signupButton" destination="koX-1C-XXC" id="6RW-mI-7z0"/>
                         <outlet property="userTextField" destination="dmi-wM-wak" id="yhr-l7-3AN"/>
+                        <segue destination="qcb-4z-J2s" kind="show" identifier="loginSegue" id="8gy-ls-ffS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S58-T9-hOh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3572" y="135"/>
+            <point key="canvasLocation" x="4396" y="118.29085457271366"/>
         </scene>
         <!--Signup-->
         <scene sceneID="kKT-xz-z3y">
@@ -230,7 +232,8 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="1bW-wO-hbU" kind="presentation" animates="NO" modalPresentationStyle="fullScreen" id="SH0-dF-CN5"/>
+                                                    <action selector="ActionBtnSignUp:" destination="NPW-Qv-vJg" eventType="touchUpInside" id="brs-1q-Y6m"/>
+                                                    <segue destination="imm-HS-TqT" kind="presentation" animates="NO" modalPresentationStyle="fullScreen" id="SH0-dF-CN5"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eHR-3P-BDy">
@@ -245,7 +248,7 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="1bW-wO-hbU" kind="presentation" animates="NO" modalPresentationStyle="fullScreen" id="WZ5-bk-4LP"/>
+                                                    <segue destination="imm-HS-TqT" kind="presentation" animates="NO" modalPresentationStyle="fullScreen" id="WZ5-bk-4LP"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -271,7 +274,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O4Y-4V-TH6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4292" y="136"/>
+            <point key="canvasLocation" x="5231.1999999999998" y="135.38230884557723"/>
         </scene>
         <!--Profile-->
         <scene sceneID="XYH-IE-gy9">
@@ -679,6 +682,7 @@
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="qcb-4z-J2s" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="19X-Q8-G8k"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="5sG-lH-nIf">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -998,6 +1002,23 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZsV-ky-mqy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4292" y="933.28335832083962"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Rar-WI-OVn">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="imm-HS-TqT" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2FX-Wu-akj">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="1bW-wO-hbU" kind="relationship" relationship="rootViewController" id="PZ7-Ej-OT1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C2B-XZ-F88" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3456.8000000000002" y="118.29085457271366"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

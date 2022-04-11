@@ -35,7 +35,15 @@ class GraphViewController: UIViewController , MDRotatingPieChartDelegate, MDRota
                 
             }
         }
-        
+        if let arrincomeDic = UserDefaults.standard.value(forKey: "arrIncomeDic") as? [[String:Any]] {
+            
+            let total = arrincomeDic.map { dic in
+                return dic["income"] as? String ?? "0"
+            }.reduce(0) { partialResult, income in
+                return (Int(income) ?? 0) + partialResult
+            }
+            slicesData.append(Data(myValue: CGFloat(total), myColor: UIColor.green, myLabel:"Income"))
+        }
         pieChart.delegate = self
         pieChart.datasource = self
     
@@ -57,7 +65,7 @@ class GraphViewController: UIViewController , MDRotatingPieChartDelegate, MDRota
         
         
         let nf = NumberFormatter()
-        nf.groupingSize = 3
+        nf.groupingSize = 1
         nf.maximumSignificantDigits = 2
         nf.minimumSignificantDigits = 2
         

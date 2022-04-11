@@ -23,15 +23,25 @@ class LoginViewController: UIViewController {
         signupButton.layer.cornerRadius = 20
     }
     
+    @IBAction func ActionLOginBtn(_ sender: Any) {
+        if self.userTextField.text?.trim().count == 0 {
+            AppDelegate.OpenAlert(with: "Alert!", message: "Enter user name", VC: self)
+        }else if self.passwordTextField.text?.trim().count == 0 {
+            AppDelegate.OpenAlert(with: "Alert!", message: "Enter Password", VC: self)
+        }else {
+            
+            if let profileDic = UserDefaults.standard.value(forKey: "LoginInfo") as? [String:Any] {
+                if self.userTextField.text == profileDic["userName"] as? String ?? "" && self.passwordTextField.text == profileDic["password"] as? String ?? ""{
+                    self.performSegue(withIdentifier: "loginSegue", sender: nil)
+                }else {
+                    AppDelegate.OpenAlert(with: "Alert!", message: "Username or Password is incorrect", VC: self)
+                }
+            }else {
+                AppDelegate.OpenAlert(with: "Alert!", message: "Please Sign UP", VC: self)
+            }
+        }
+    }
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    
     
 }

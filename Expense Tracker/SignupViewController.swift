@@ -27,14 +27,20 @@ class SignupViewController: UIViewController {
     }
     
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    @IBAction func ActionBtnSignUp(_ sender: Any) {
+        if self.userTextField.text?.trim().count == 0 {
+            AppDelegate.OpenAlert(with: "Alert!", message: "Enter user name", VC: self)
+        }else if self.passwordTextField.text?.trim().count == 0 {
+            AppDelegate.OpenAlert(with: "Alert!", message: "Enter Password", VC: self)
+        }else if self.confirmPasswordTextField.text?.trim().count == 0 {
+            AppDelegate.OpenAlert(with: "Alert!", message: "Enter Confirm Password", VC: self)
+        }else if self.confirmPasswordTextField.text != self.passwordTextField.text {
+            AppDelegate.OpenAlert(with: "Alert!", message: "Enter Confirm Password", VC: self)
+        }else {
+            let profileDic = ["userName":self.userTextField.text ?? "","password":self.passwordTextField.text ?? ""]
+            UserDefaults.standard.set(profileDic, forKey: "LoginInfo")
+        }
+    }
+    
     
 }
