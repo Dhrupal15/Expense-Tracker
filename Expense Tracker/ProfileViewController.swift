@@ -31,6 +31,7 @@ class ProfileViewController: UIViewController , UINavigationControllerDelegate ,
         
         self.datePicker.date = Date()
         self.datePicker.maximumDate = Date()
+        self.datePicker.datePickerMode = .date
         self.datePicker.preferredDatePickerStyle = .wheels
         self.datePicker.addTarget(self, action: #selector(self.DatePickerDidChange(_ :)), for: .valueChanged)
         self.txt_BirthDate.inputView = self.datePicker
