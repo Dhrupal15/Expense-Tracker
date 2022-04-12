@@ -21,6 +21,12 @@ class LoginViewController: UIViewController {
         passwordTextField.layer.cornerRadius = 20
         loginButton.layer.cornerRadius = 20
         signupButton.layer.cornerRadius = 20
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+        view.addGestureRecognizer(tap) // Add gesture recognizer to background view
+    }
+    
+    @objc func handleTap() {
+        view.endEditing(true) // dismiss keyoard
     }
     
     @IBAction func ActionLOginBtn(_ sender: Any) {
