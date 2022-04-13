@@ -41,7 +41,7 @@ class ProfileViewController: UIViewController , UINavigationControllerDelegate ,
         self.txt_FullName.layer.borderWidth = 1.0
         self.txt_FullName.layer.cornerRadius = 10
         self.txt_FullName.attributedPlaceholder = NSAttributedString(
-            string: "Eneter Full Name",
+            string: "Enter Full Name",
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.init(white: 1.0, alpha: 0.6)]
         )
         
@@ -50,7 +50,7 @@ class ProfileViewController: UIViewController , UINavigationControllerDelegate ,
         self.txt_Email.layer.borderWidth = 1.0
         self.txt_Email.layer.cornerRadius = 10
         self.txt_Email.attributedPlaceholder = NSAttributedString(
-            string: "Eneter Email",
+            string: "Enter Email",
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.init(white: 1.0, alpha: 0.6)]
         )
         
@@ -59,7 +59,7 @@ class ProfileViewController: UIViewController , UINavigationControllerDelegate ,
         self.txt_MobileNumber.layer.borderWidth = 1.0
         self.txt_MobileNumber.layer.cornerRadius = 10
         self.txt_MobileNumber.attributedPlaceholder = NSAttributedString(
-            string: "Eneter Moble Number",
+            string: "Enter Moble Number",
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.init(white: 1.0, alpha: 0.6)]
         )
         
