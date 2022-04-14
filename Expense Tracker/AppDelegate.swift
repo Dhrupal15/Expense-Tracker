@@ -14,6 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        // Set Tab Bar appearance for selected and Un selected tab color
         UITabBar.appearance().tintColor = UIColor.white
         UITabBar.appearance().isTranslucent = false
         
@@ -37,6 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
+    //OPen Alert Global/Common Method
     static func OpenAlert(with title:String , message:String , VC:UIViewController){
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let cancelAction = UIAlertAction.init(title: "Ok", style: .cancel, handler: nil)
@@ -46,6 +48,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 
 extension String {
+    //Remove white space before and after text string 
     func trim() -> String {
         return self.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
     }
