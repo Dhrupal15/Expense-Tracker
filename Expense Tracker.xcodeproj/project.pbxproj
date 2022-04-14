@@ -10,7 +10,6 @@
 		3B27813827FAB4FF00E6C5F8 /* MDRotatingPieChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B27813727FAB4FF00E6C5F8 /* MDRotatingPieChart.swift */; };
 		CC89FD8627E386DE00E8D33C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC89FD8527E386DE00E8D33C /* AppDelegate.swift */; };
 		CC89FD8827E386DE00E8D33C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC89FD8727E386DE00E8D33C /* SceneDelegate.swift */; };
-		CC89FD8A27E386DE00E8D33C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC89FD8927E386DE00E8D33C /* ViewController.swift */; };
 		CC89FD8D27E386DE00E8D33C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC89FD8B27E386DE00E8D33C /* Main.storyboard */; };
 		CC89FD8F27E386EC00E8D33C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC89FD8E27E386EC00E8D33C /* Assets.xcassets */; };
 		CC89FD9227E386EC00E8D33C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC89FD9027E386EC00E8D33C /* LaunchScreen.storyboard */; };
@@ -22,9 +21,6 @@
 		CC8D2C9327ECC567001D4944 /* ExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8D2C9227ECC567001D4944 /* ExpenseViewController.swift */; };
 		CC8D2C9827ECC59A001D4944 /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8D2C9727ECC59A001D4944 /* GraphViewController.swift */; };
 		CC8D2C9D27ECC745001D4944 /* IncomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8D2C9C27ECC745001D4944 /* IncomeViewController.swift */; };
-		CCA5DB4327EF968000FD8069 /* expenseData.json in Resources */ = {isa = PBXBuildFile; fileRef = CCA5DB4027EF968000FD8069 /* expenseData.json */; };
-		CCA5DB4427EF968000FD8069 /* userData.json in Resources */ = {isa = PBXBuildFile; fileRef = CCA5DB4127EF968000FD8069 /* userData.json */; };
-		CCA5DB4527EF968000FD8069 /* categoryData.json in Resources */ = {isa = PBXBuildFile; fileRef = CCA5DB4227EF968000FD8069 /* categoryData.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +45,6 @@
 		CC89FD8227E386DE00E8D33C /* Expense Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Expense Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC89FD8527E386DE00E8D33C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CC89FD8727E386DE00E8D33C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CC89FD8927E386DE00E8D33C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CC89FD8C27E386DE00E8D33C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CC89FD8E27E386EC00E8D33C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CC89FD9127E386EC00E8D33C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -66,9 +61,6 @@
 		CC8D2C9227ECC567001D4944 /* ExpenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseViewController.swift; sourceTree = "<group>"; };
 		CC8D2C9727ECC59A001D4944 /* GraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
 		CC8D2C9C27ECC745001D4944 /* IncomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeViewController.swift; sourceTree = "<group>"; };
-		CCA5DB4027EF968000FD8069 /* expenseData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = expenseData.json; sourceTree = "<group>"; };
-		CCA5DB4127EF968000FD8069 /* userData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = userData.json; sourceTree = "<group>"; };
-		CCA5DB4227EF968000FD8069 /* categoryData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = categoryData.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,10 +111,8 @@
 		CC89FD8427E386DE00E8D33C /* Expense Tracker */ = {
 			isa = PBXGroup;
 			children = (
-				CCA5DB3F27EF968000FD8069 /* Resources */,
 				CC89FD8527E386DE00E8D33C /* AppDelegate.swift */,
 				CC89FD8727E386DE00E8D33C /* SceneDelegate.swift */,
-				CC89FD8927E386DE00E8D33C /* ViewController.swift */,
 				CC89FD8B27E386DE00E8D33C /* Main.storyboard */,
 				CC89FD8E27E386EC00E8D33C /* Assets.xcassets */,
 				CC89FD9027E386EC00E8D33C /* LaunchScreen.storyboard */,
@@ -154,16 +144,6 @@
 				CC89FDA927E386EC00E8D33C /* Info.plist */,
 			);
 			path = "Expense TrackerUITests";
-			sourceTree = "<group>";
-		};
-		CCA5DB3F27EF968000FD8069 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				CCA5DB4027EF968000FD8069 /* expenseData.json */,
-				CCA5DB4127EF968000FD8069 /* userData.json */,
-				CCA5DB4227EF968000FD8069 /* categoryData.json */,
-			);
-			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,11 +249,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CCA5DB4427EF968000FD8069 /* userData.json in Resources */,
-				CCA5DB4527EF968000FD8069 /* categoryData.json in Resources */,
 				CC89FD9227E386EC00E8D33C /* LaunchScreen.storyboard in Resources */,
 				CC89FD8F27E386EC00E8D33C /* Assets.xcassets in Resources */,
-				CCA5DB4327EF968000FD8069 /* expenseData.json in Resources */,
 				CC89FD8D27E386DE00E8D33C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -304,7 +281,6 @@
 				CC8D2C8427ECC417001D4944 /* LoginViewController.swift in Sources */,
 				CC8D2C9D27ECC745001D4944 /* IncomeViewController.swift in Sources */,
 				3B27813827FAB4FF00E6C5F8 /* MDRotatingPieChart.swift in Sources */,
-				CC89FD8A27E386DE00E8D33C /* ViewController.swift in Sources */,
 				CC8D2C8927ECC512001D4944 /* SignupViewController.swift in Sources */,
 				CC8D2C9827ECC59A001D4944 /* GraphViewController.swift in Sources */,
 				CC89FD8627E386DE00E8D33C /* AppDelegate.swift in Sources */,

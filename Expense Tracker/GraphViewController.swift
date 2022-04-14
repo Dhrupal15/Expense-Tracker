@@ -13,15 +13,19 @@ class GraphViewController: UIViewController , MDRotatingPieChartDelegate, MDRota
     
     var pieChart:MDRotatingPieChart!
 
+    //View Life Cycle Methods
     override func viewDidLoad() {
         
         super.viewDidLoad()
         self.title = "Expense Chart"
+        //Initialize pie chart set frame of pie chart
         pieChart = MDRotatingPieChart(frame: CGRect(x: 0, y: 100, width: view.frame.width, height: view.frame.width))
         
+        //get expense data from local prefference
         if let arrExpenseDic = UserDefaults.standard.value(forKey: "arrExpenseDic") as? [[String:Any]] {
-            
+            // For loop of total category
             for (key,category) in arrCategory.enumerated() {
+                //get data of category and total the expense value of same category
                 let total = arrExpenseDic.map { dic in
                     if (dic["expenseCategory"] as? String ?? "") == category {
                         return dic["expense"] as? String ?? "0"
@@ -30,29 +34,33 @@ class GraphViewController: UIViewController , MDRotatingPieChartDelegate, MDRota
                 }.reduce(0) { partialResult, Expense in
                     return (Int(Expense) ?? 0) + partialResult
                 }
-                
+                // Add point data to render the chart
                 slicesData.append(Data(myValue: CGFloat(total), myColor: arrCategoryColor[key], myLabel:category))
                 
             }
         }
+        //get expense data from local prefference
         if let arrincomeDic = UserDefaults.standard.value(forKey: "arrIncomeDic") as? [[String:Any]] {
-            
+            //Get total of Income
             let total = arrincomeDic.map { dic in
                 return dic["income"] as? String ?? "0"
             }.reduce(0) { partialResult, income in
                 return (Int(income) ?? 0) + partialResult
             }
-            slicesData.append(Data(myValue: CGFloat(total), myColor: UIColor.green, myLabel:"Income"))
+            slicesData.append(Data(myValue: CGFloat(total), myColor: UIColor.white, myLabel:"Income"))
         }
+        //Set delegate and datasource
         pieChart.delegate = self
         pieChart.datasource = self
     
+        //Add Pie chart in view
         view.addSubview(pieChart)
         
         /*
         Here you can dig into some properties
         -------------------------------------
         */
+        //set pie chart view UI
         let peiChartWidth = UIScreen.main.bounds.width/2.2
         var properties = Properties()
         properties.smallRadius = peiChartWidth - 70

@@ -19,21 +19,17 @@ class ProfileViewController: UIViewController , UINavigationControllerDelegate ,
     var imgPicker = UIImagePickerController()
     var imgURL = ""
     
+    //View Life Cycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        // Set Border and Corner Radius
         self.imgvw_Profile.layer.borderWidth = 2.0
         self.imgvw_Profile.layer.borderColor = UIColor.init(white: 1.0, alpha: 0.6).cgColor
         self.imgvw_Profile.layer.masksToBounds = true
         self.imgvw_Profile.layer.cornerRadius = self.imgvw_Profile.frame.size.width/2
         self.imgvw_Profile.contentMode = .scaleAspectFill
         
-        self.datePicker.date = Date()
-        self.datePicker.maximumDate = Date()
-        self.datePicker.datePickerMode = .date
-        self.datePicker.preferredDatePickerStyle = .wheels
-        self.datePicker.addTarget(self, action: #selector(self.DatePickerDidChange(_ :)), for: .valueChanged)
-        self.txt_BirthDate.inputView = self.datePicker
+        
         
         self.txt_FullName.tintColor = UIColor.white
         self.txt_FullName.layer.borderColor = UIColor.white.cgColor
@@ -71,6 +67,15 @@ class ProfileViewController: UIViewController , UINavigationControllerDelegate ,
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.init(white: 1.0, alpha: 0.6)]
         )
         
+        //Set Date Picker to text field
+        self.datePicker.date = Date()
+        self.datePicker.maximumDate = Date()
+        self.datePicker.datePickerMode = .date
+        self.datePicker.preferredDatePickerStyle = .wheels
+        self.datePicker.addTarget(self, action: #selector(self.DatePickerDidChange(_ :)), for: .valueChanged)
+        self.txt_BirthDate.inputView = self.datePicker
+        
+        //Set ToolBar On keyboard for textfield
         let numberToolbar = UIToolbar(frame:CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50))
         numberToolbar.barStyle = .default
         numberToolbar.items = [
@@ -83,15 +88,26 @@ class ProfileViewController: UIViewController , UINavigationControllerDelegate ,
         self.txt_MobileNumber.inputAccessoryView = numberToolbar
         self.txt_BirthDate.inputAccessoryView = numberToolbar
         
+        //Set Top Navigation Bar Button
         let btnSave = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(self.ActionBtnSave))
         btnSave.tintColor = .white
         self.navigationItem.rightBarButtonItem = btnSave
         self.title = "Profile"
         
+        //Set Default Save Data
         self.SetData()
+        
+        // Add Tap Gesture in View to close the keyboard
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+        view.addGestureRecognizer(tap) // Add gesture recognizer to background view
+    }
+    
+    @objc func handleTap() {
+        view.endEditing(true) // dismiss keyoard
     }
 
     func SetData(){
+        //Get data from Device local prefference and set in textfield
         if let profileDic = UserDefaults.standard.value(forKey: "ProfileDic") as? [String:Any] {
             self.txt_FullName.text = profileDic["fullName"] as? String ?? ""
             self.txt_Email.text = profileDic["email"] as? String ?? ""
@@ -109,12 +125,15 @@ class ProfileViewController: UIViewController , UINavigationControllerDelegate ,
     }
     
     @objc func cancelNumberPad() {
+        //Dismiss Keyboard
         self.view.endEditing(true)
     }
     @objc func doneWithNumberPad() {
+        //Dismiss Keyboard
         self.view.endEditing(true)
     }
     func SetDate(){
+        //Set date formate to text field
         let dateFormate = DateFormatter()
         dateFormate.dateFormat = "dd-MMM-yy"
         self.txt_BirthDate.text = dateFormate.string(from: self.datePicker.date)
@@ -125,6 +144,7 @@ class ProfileViewController: UIViewController , UINavigationControllerDelegate ,
     }
     
     @objc func ActionBtnSave(){
+        //Check Validations
         if self.txt_FullName.text?.trim().count == 0 {
             AppDelegate.OpenAlert(with: "Alert!", message: "Enter Full Name", VC: self)
         }else if self.txt_Email.text?.trim().count == 0 {
@@ -134,6 +154,7 @@ class ProfileViewController: UIViewController , UINavigationControllerDelegate ,
         }else if self.txt_BirthDate.text?.trim().count == 0 {
             AppDelegate.OpenAlert(with: "Alert!", message: "Select BirtDate", VC: self)
         }else {
+            //Save data in the device local prefference
             let profileDic = ["fullName":self.txt_FullName.text ?? "",
                               "email":self.txt_Email.text ?? "",
                               "mobileNumber":self.txt_MobileNumber.text ?? "",
@@ -145,6 +166,7 @@ class ProfileViewController: UIViewController , UINavigationControllerDelegate ,
     }
     
     @IBAction func ActionChangeProfilePic(_ sender: Any) {
+        //Alert for choose image from camera or photo
         let alert = UIAlertController(title: "Select Options", message: "", preferredStyle: .alert)
         let cameraAction = UIAlertAction.init(title: "Camera", style: .default) { action in
             self.OpenCamera()
@@ -160,23 +182,28 @@ class ProfileViewController: UIViewController , UINavigationControllerDelegate ,
     }
     
     func OpenCamera(){
+        //OPen Image Picker to take photo from camera
         self.imgPicker.delegate = self
         self.imgPicker.allowsEditing = true
-        self.imgPicker.mediaTypes = ["public.image"]
-        self.imgPicker.sourceType = .camera
+        self.imgPicker.mediaTypes = ["public.image"] // Media Type Image
+        self.imgPicker.sourceType = .camera // Source type Camera
         self.present(self.imgPicker, animated: true, completion: nil)
     }
     func OpenPhotos(){
+        //OPen Image Picker to take photo from Photos
         self.imgPicker.delegate = self
         self.imgPicker.allowsEditing = true
-        self.imgPicker.mediaTypes = ["public.image"]
-        self.imgPicker.sourceType = .photoLibrary
+        self.imgPicker.mediaTypes = ["public.image"] // Media Type Image
+        self.imgPicker.sourceType = .photoLibrary // Source type photoLibrary
         self.present(self.imgPicker, animated: true, completion: nil)
     }
+    //Image Picker Delegate Methods
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        //Dismiss ImagePicker
         self.imgPicker.dismiss(animated: true, completion: nil)
     }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        // Did finish by choosing photo
         if let image = info[.originalImage] as? UIImage  {
             let imageData = image.jpegData(compressionQuality: 1) as! NSData
             let relativePath = "image_\(Date()).jpg"
@@ -188,6 +215,7 @@ class ProfileViewController: UIViewController , UINavigationControllerDelegate ,
         self.imgPicker.dismiss(animated: true, completion: nil)
     }
     func documentsPathForFileName(name: String) -> String {
+        // Create Path in Filemanager to save file on that path
         let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true);
         let path = paths[0] as String;
         let fullPath = path.appending(name)
