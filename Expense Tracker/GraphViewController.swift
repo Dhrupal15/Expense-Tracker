@@ -2,7 +2,7 @@
 //  GraphViewController.swift
 //  Expense Tracker
 //
-//  Created by user204862 on 3/24/22.
+//  Created by Dhrupal
 //
 
 import UIKit
@@ -52,11 +52,12 @@ class GraphViewController: UIViewController , MDRotatingPieChartDelegate, MDRota
         //Set delegate and datasource
         pieChart.delegate = self
         pieChart.datasource = self
-        
+
         //Add Pie chart in view
         view.addSubview(pieChart)
         
         /*
+
          Here you can dig into some properties
          -------------------------------------
          */

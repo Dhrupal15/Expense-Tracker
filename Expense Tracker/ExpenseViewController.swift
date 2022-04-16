@@ -2,7 +2,7 @@
 //  ExpenseViewController.swift
 //  Expense Tracker
 //
-//  Created by user204862 on 3/24/22.
+//  Created by Madhavi and Neha
 //
 
 import UIKit
@@ -55,12 +55,12 @@ class ExpenseViewController: UIViewController {
         self.txt_Title.layer.borderWidth = 1.0
         self.txt_Title.layer.cornerRadius = 10
         self.txt_Title.attributedPlaceholder = NSAttributedString(
-            string: "Eneter Title",
+            string: "Enter Title",
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.init(white: 1.0, alpha: 0.6)]
         )
         self.txt_Expense.tintColor = UIColor.white
         self.txt_Expense.attributedPlaceholder = NSAttributedString(
-            string: "Eneter Expense",
+            string: "Enter Expense",
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.init(white: 1.0, alpha: 0.6)]
         )
         self.txt_Expense.layer.borderColor = UIColor.white.cgColor
