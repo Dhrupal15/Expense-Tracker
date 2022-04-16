@@ -19,17 +19,21 @@ class IncomeViewController: UIViewController {
     var datePicker = UIDatePicker()
     var arrIncomeDic = [[String:Any]]()
     
+    //View Life Cycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        //Set Tableview delegate and datasource
         self.tblvw.delegate = self
         self.tblvw.dataSource = self
+        //Set data
         self.SetData()
+        //Set datepicker
+        
         self.datePicker.date = Date()
         self.datePicker.preferredDatePickerStyle = .wheels
         self.datePicker.addTarget(self, action: #selector(self.DatePickerDidChange(_ :)), for: .valueChanged)
         self.txt_SelectDate.inputView = self.datePicker
-        
+        //Set textfield UI
         self.txt_Title.tintColor = UIColor.white
         self.txt_Title.layer.borderColor = UIColor.white.cgColor
         self.txt_Title.layer.borderWidth = 1.0
@@ -57,7 +61,7 @@ class IncomeViewController: UIViewController {
         self.btn_Save.layer.borderColor = UIColor.white.cgColor
         self.btn_Save.layer.borderWidth = 1.0
         self.btn_Save.layer.cornerRadius = 10
-        
+        //Set Toolbar on Keyboard
         let numberToolbar = UIToolbar(frame:CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50))
         numberToolbar.barStyle = .default
         numberToolbar.items = [
@@ -71,16 +75,20 @@ class IncomeViewController: UIViewController {
         self.SetDate()
     }
     @objc func cancelNumberPad() {
+        //Dismiss keyboard
         self.view.endEditing(true)
     }
     @objc func doneWithNumberPad() {
+        //Dismiss keyboard
         self.view.endEditing(true)
-        
     }
     func SetData(){
+        //Get dat from local preferences and set data in textfield
         if let arrincomeDic = UserDefaults.standard.value(forKey: "arrIncomeDic") as? [[String:Any]] {
             self.arrIncomeDic = arrincomeDic
             self.tblvw.reloadData()
+            //Get total of income using reduce method
+            // Use map to get array only of income value
             let total = self.arrIncomeDic.map { dic in
                 return dic["income"] as? String ?? "0"
             }.reduce(0) { partialResult, income in
@@ -103,6 +111,7 @@ class IncomeViewController: UIViewController {
     }
     
     @IBAction func ActionBtnSave(_ sender: Any) {
+        //Check Validations
         if self.txt_Title.text?.trim().count == 0 {
             AppDelegate.OpenAlert(with: "Alert!", message: "Enter Income Title", VC: self)
             return
@@ -115,7 +124,7 @@ class IncomeViewController: UIViewController {
             AppDelegate.OpenAlert(with: "Alert!", message: "Select Income Date", VC: self)
             return
         }
-        
+        // Fetch Old data and add ned data and save it in local prefferences
         if var arrincomeDic = UserDefaults.standard.value(forKey: "arrIncomeDic") as? [[String:Any]] {
             let incomDic = ["title":self.txt_Title.text ?? "",
                             "income":self.txt_Income.text ?? "0",
@@ -123,6 +132,7 @@ class IncomeViewController: UIViewController {
             arrincomeDic.append(incomDic)
             UserDefaults.standard.set(arrincomeDic, forKey: "arrIncomeDic")
         }else {
+            //save new data first time in local prefferences
             let arrincomeDic = [["title":self.txt_Title.text ?? "",
                             "income":self.txt_Income.text ?? "0",
                             "date":self.txt_SelectDate.text ?? ""]]
@@ -135,9 +145,11 @@ class IncomeViewController: UIViewController {
 
 extension IncomeViewController : UITableViewDelegate , UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        //return number of rows as count of your inserted data
         return self.arrIncomeDic.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        //Set row and set data one by one
         let cell = tableView.dequeueReusableCell(withIdentifier: IncomeTableViewCell.IncomeTableViewCellId, for: indexPath) as! IncomeTableViewCell
         let incomDic = self.arrIncomeDic[indexPath.row]
         cell.lbl_Title.text = incomDic["title"] as? String ?? ""
@@ -146,9 +158,11 @@ extension IncomeViewController : UITableViewDelegate , UITableViewDataSource {
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        //set row height as per your data
         return UITableView.automaticDimension
     }
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        //Add Swipe actions to delete row
       let deleteAction = UIContextualAction(style: .normal, title: "Delete") { (action, view, completion) in
           self.arrIncomeDic.remove(at: indexPath.row)
           UserDefaults.standard.set(self.arrIncomeDic, forKey: "arrIncomeDic")
@@ -161,6 +175,7 @@ extension IncomeViewController : UITableViewDelegate , UITableViewDataSource {
 }
 
 class IncomeTableViewCell:UITableViewCell {
+    //Outlets of tableview cell
     static let IncomeTableViewCellId = "IncomeTableViewCell"
     
     @IBOutlet weak var lbl_Title: UILabel!
